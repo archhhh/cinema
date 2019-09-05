@@ -1,18 +1,17 @@
-import React, {Component} from "react";
+import { Link } from "react-router-dom";
+import React from "react";
 import Navbar from "./Navbar";
 
 
-class Header extends Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return (
+const Header = (props) => {
+    return (
             <header>
-                <Navbar />
+                <h1 className="logo">
+                    <Link to="/">Logo</Link>
+                </h1>
+                <Navbar user={props.user}/>
             </header>
-        );
-    }
+    );
 };
 
 export default Header;
